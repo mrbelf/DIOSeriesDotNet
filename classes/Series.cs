@@ -8,12 +8,14 @@ namespace Series
         private string _title;
         private string _description;
         private int _year;
+        private bool _deleted;
 
         public Genre Genre { get => _genre; }
         public string Title { get => _title; }
         public string Description { get => _description; }
         public int Year { get => _year; }
         public int ID { get => id;}
+        public bool Deleted { get => _deleted;}
 
         public Series(int id, Genre genre, string title, string description, int year)
         {
@@ -22,6 +24,12 @@ namespace Series
             _title = title;
             _description = description;
             _year = year;
+            _deleted = false;
+        }
+
+        public void Delete()
+        {
+            _deleted = true;
         }
 
         public override string ToString()
